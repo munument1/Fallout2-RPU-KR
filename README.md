@@ -38,6 +38,19 @@
 3. 설치 완료 후 `mods/upu.ini` 및 `mods/rpu.ini` 파일을 메모장 등으로 열어 다양한 편의성 옵션을 상세하게 구성할 수 있습니다.
 4. 더 풍부한 경험을 원하시면 아래의 [권장 추가 모드](#권장-추가-모드)들을 확인해 보세요.
 
+#### 한국어 패치 적용
+1. 이 저장소의 **Releases** 페이지에서 최신 한국어 패치를 다운로드합니다.
+2. 압축 파일의 내용을 RPU가 설치된 Fallout 2 게임 디렉터리에 복사합니다.
+3. 배포물에는 한글 Sfall `ddraw.dll`, `LangFont.ini`, `fonts` 폴더가 포함되어 있습니다.
+4. 설치본마다 설정이 다르므로 `fallout2.cfg` 전체를 교체하지 마십시오. 기존 파일의 `[system]` 섹션에서 `language` 값만 다음처럼 변경합니다.
+
+   ```ini
+   [system]
+   language=korean
+   ```
+
+이미 `language=` 줄이 있다면 새 줄을 추가하지 말고 기존 값만 변경합니다. 기존 `ddraw.ini`, `sfall.dat`와 CFG의 다른 설정은 유지하십시오.
+
 #### Linux / MacOS 환경
 - 다음 [안내 문서](docs/linux.md)를 참조해 주세요.
 
@@ -82,4 +95,4 @@
 - [알려진 문제점 목록 (Known issues)](docs/known.md)
 - [크래시/팅김 현상 제보 방법](https://github.com/BGforgeNet/Fallout2_Unofficial_Patch/blob/master/docs/crash.md)
 - [기여자 정보 (Credits)](docs/credits.md)
-- (한글호환패치 [소스코드](https://github.com/munument1/Unofficial-KR-Sfall))
+- (한글호환패치 [소스코드](https://github.com/munument1/-KR-SFall-Unofficial-Translation))
