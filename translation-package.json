@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "mod": "RPU",
+  "baseline": "RPU 2.4.34",
+  "engine_repository": "https://github.com/munument1/Fallout2-Korean-Text-Engine",
+  "engine_profile": "rpu",
+  "engine_validation": "selected screens checked with official sfall 4.5.1",
+  "sources": [
+    {
+      "from": "mods/rpu",
+      "to": "data"
+    },
+    {
+      "from": "mods/f2_res",
+      "to": "data"
+    },
+    {
+      "from": "mods/party_orders",
+      "to": "data"
+    },
+    {
+      "from": "data",
+      "to": "data"
+    },
+    {
+      "from": "appearance",
+      "to": "appearance"
+    },
+    {
+      "from": "translations",
+      "to": "translations"
+    }
+  ],
+  "required_files": [
+    "data/text/korean/game/misc.msg",
+    "data/premade/combat.bio",
+    "data/premade/diplomat.bio",
+    "data/premade/stealth.bio"
+  ]
+}
