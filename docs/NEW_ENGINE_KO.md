@@ -1,18 +1,18 @@
 # RPU 2.4.34 독립형 한국어 텍스트 엔진 설치 안내
 
-이 안내는 v1.2.0-beta.1 공개 베타 이후의 방법입니다. 기존 게임별 --profile 방식과 중국어 수정 EXE/DLL 입력은 필요하지 않습니다.
+이 안내는 v1.2.0-beta.2 공개 베타 이후의 방법입니다. 기존 게임별 --profile 방식과 중국어 수정 EXE/DLL 입력은 필요하지 않습니다.
 
 ## 설치 순서
 
 1. 대상 모드와 번역 ZIP의 기준 버전을 일치시킵니다. 게임 위치는 **RPU 게임 폴더**입니다.
 2. **먼저** 번역 데이터 ZIP을 게임 실행 폴더에 적용해 data/text/korean 등의 파일을 배치합니다. ZIP에 엔진 바이너리나 게임 원본 EXE, DAT, INT가 없어야 합니다.
-3. [v1.2.0-beta.1 설치기](https://github.com/munument1/Fallout2-Korean-Text-Engine/releases/tag/v1.2.0-beta.1)에서 Fallout2-Korean-Native-Setup.exe를 실행하고 폴더 하나만 고릅니다. 호환 EXE 전체를 Watcom ABI 구조로 검사하며 게임 종류는 선택하지 않습니다.
+3. [v1.2.0-beta.2 설치기](https://github.com/munument1/Fallout2-Korean-Text-Engine/releases/tag/v1.2.0-beta.2)에서 Fallout2-Korean-Native-Setup.exe를 실행하고 폴더 하나만 고릅니다. 호환 EXE 전체를 Watcom ABI 구조로 검사하며 게임 종류는 선택하지 않습니다.
 4. 설치 후 **fallout2.cfg**의 language=korean을 확인합니다. 한국어 MSG가 없으면 언어를 강제로 바꾸지 않습니다.
 5. 게임 원래 실행 방법으로 구동하고 메뉴, 대화, 줄바꿈, 전투, 저장/불러오기를 점검합니다.
 
 ## 모드 전용 제한
 
-RPU의 기존 sfall/HRP 구성을 그대로 유지합니다. 두 게임 실행 파일은 자동 탐색하며 RPU 원본 자체는 아직 업데이트 중입니다.
+RPU의 기존 sfall/HRP 구성을 그대로 유지합니다. 두 게임 실행 파일은 자동 탐색하며 이 번역 데이터의 기준은 RPU 2.4.34입니다. 다른 버전에는 해당 버전의 번역 확인이 필요합니다.
 
 ## 파일 보존과 복구
 
