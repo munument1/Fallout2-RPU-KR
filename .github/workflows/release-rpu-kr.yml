@@ -1,0 +1,85 @@
+name: Build and release RPU Korean v2.4.34 with verified HRP fix
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Korean translation
+        uses: actions/checkout@v4
+      - name: Checkout official RPU HRP
+        uses: actions/checkout@v4
+        with:
+          repository: BGforgeNet/Fallout2_Restoration_Project
+          ref: v2.4.34
+          path: upstream-rpu
+          sparse-checkout: |
+            release/f2_res.dll
+          sparse-checkout-cone-mode: false
+      - name: Checkout proven Resurrection KR1.2 patch code
+        uses: actions/checkout@v4
+        with:
+          repository: munument1/Fallout-1.5-Resurrection-KR
+          ref: ed95dc3b39ec5ad72a8dc812f6ee10821094bea6
+          path: resurrection-kr12
+          sparse-checkout: |
+            tools/fix_resurrection_hrp.py
+            tools/resurrection_monitor_fit.bin
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install build dependencies
+        run: python -m pip install pefile==2024.8.26
+      - name: Build patched exact-match HRP
+        run: |
+          mkdir -p dist
+          python tools/probe_rpu_hrp.py upstream-rpu/release/f2_res.dll
+          python resurrection-kr12/tools/fix_resurrection_hrp.py upstream-rpu/release/f2_res.dll dist/f2_res.dll
+      - name: Validate PE patch structure
+        run: |
+          python - <<'PY'
+          import hashlib,pefile
+          from pathlib import Path
+          p=pefile.PE("dist/f2_res.dll")
+          data=Path("dist/f2_res.dll").read_bytes()
+          original=Path("upstream-rpu/release/f2_res.dll").read_bytes()
+          assert hashlib.sha256(original).hexdigest()=="2d3c52cf624b22958db7fa44e3db71c2d0478503da5ceb40f0636dea1202fb5a"
+          assert hashlib.sha256(original).hexdigest()!=hashlib.sha256(data).hexdigest()
+          assert [s.Name.rstrip(b"\\0") for s in p.sections].count(b".krfit")==1
+          for rva in (0xF250,0xF2E0):
+              assert data[p.get_offset_from_rva(rva)]==0xE9
+          print("Patched DLL verified")
+          PY
+      - name: Test translations and produce ZIP files
+        run: |
+          python -m unittest discover -s tests -v
+          python tools/audit_cut_subtitles.py --verify-critical
+          python tools/build_translation.py --output dist/korean-classic-data.zip
+          python tools/build_rpu_bundle.py --translation dist/korean-classic-data.zip --hrp dist/f2_res.dll --output dist/RPU-KR-v2.4.34-with-HRP-fix.zip
+          sha256sum dist/*.zip > dist/SHA256SUMS.txt
+      - name: Upload release candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: rpu-korean-v2-4-34-fixed
+          path: |
+            dist/RPU-KR-v2.4.34-with-HRP-fix.zip
+            dist/korean-classic-data.zip
+            dist/SHA256SUMS.txt
+          if-no-files-found: error
+      - name: Publish stable GitHub release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=v2.4.34-native.1
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release tag already exists. Preserving it."
+            exit 0
+          fi
+          gh release create "$TAG"             dist/RPU-KR-v2.4.34-with-HRP-fix.zip             dist/korean-classic-data.zip             dist/SHA256SUMS.txt             --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA"             --title "RPU Korean v2.4.34-native.1"             --notes-file docs/RELEASE_NOTES_V2_4_34_NATIVE_1.md --latest
