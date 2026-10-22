@@ -1,7 +1,7 @@
-1:It is done.
-2:Vault Thirteen belongs to the Unity and the Master.
-3:Your knowledge of the Vault defenses saved many mutant lives during the attack.
-4:You personally made the final kill when you took the life of the Overseer.
-5:You will certainly become one of the finest soldiers for the Unity, and your skills will see you rewarded often in the future.
-6:You are happy.
-7:But there remains the tiniest doubt of what could have been...
+1:모든 것이 끝났다.
+2:볼트 13은 이제 유니티와 마스터의 차지가 되었다.
+3:볼트의 방어 체계에 관한 당신의 지식 덕분에 공격 과정에서 많은 뮤턴트가 목숨을 건졌다.
+4:감독관의 목숨을 끊어 최후의 일격을 가한 사람도 바로 당신이었다.
+5:당신은 틀림없이 유니티 최고의 병사 중 하나가 될 것이며, 앞으로도 실력에 걸맞은 보상을 자주 받게 될 것이다.
+6:당신은 행복하다.
+7:하지만 다른 길을 택했다면 어땠을까 하는 아주 작은 의문이 여전히 남아 있다...

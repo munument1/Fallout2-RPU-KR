@@ -1,2 +1,2 @@
-1:The death of the Master was the first major step towards ending his mad dream of conquest and enforced peace, but it is the destruction of the Vats that neutralizes the mutant threat.
-2:Without the ability to create more mutants and enforce their harsh brand of justice, the mutant armies flee to the east, beyond the no-man's land.
+1:마스터의 죽음은 정복과 강압적인 평화라는 광기 어린 야망을 저지하는 첫걸음이었다. 하지만 뮤턴트의 위협을 무력화한 결정적인 사건은 배양조의 파괴였다.
+2:더는 뮤턴트를 만들어 자신들만의 가혹한 정의를 강요할 수 없게 된 뮤턴트 군대는 무인지대를 넘어 동쪽으로 달아났다.

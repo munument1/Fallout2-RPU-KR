@@ -1,2 +1,2 @@
-1:The Desert Raiders pillage most of the northern parts of New California.
-2:They are a scourge that lasts for years, until a rebel army of mutants brings them down.
+1:사막 약탈자들은 뉴 캘리포니아 북부의 대부분을 약탈했다.
+2:그들은 오랫동안 재앙 같은 존재로 군림했지만, 끝내 반란을 일으킨 뮤턴트 군대에 의해 무너졌다.

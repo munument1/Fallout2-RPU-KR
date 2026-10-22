@@ -1,2 +1,2 @@
-1:Thanks to your persistence, the Raiders are destroyed as an effective fighting force, and disband.
-2:None of the Raider survivors are ever heard from again.
+1:당신의 끈질긴 노력 덕분에 약탈자들은 전투 조직으로서 완전히 와해되어 흩어졌다.
+2:그 후 살아남은 약탈자들의 소식은 누구에게서도 들을 수 없었다.

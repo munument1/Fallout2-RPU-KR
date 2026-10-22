@@ -13,6 +13,7 @@ from pathlib import Path
 CUT_ROOT = Path("mods/rpu/text/korean")
 FOLDERS = ("cuts", "cuts_female")
 CRITICAL = ("nar_2.txt", "nar_3.txt")
+REVIEWED = ("nar_9.txt", "nar_10.txt", "nar_11.txt", "nar_12.txt", "nar_13.txt", "nar_15.txt", "nar_16.txt", "nar_18.txt", "nar_19.txt", "nar_20.txt", "nar_21.txt", "nar_22.txt", "nar_23.txt", "nar_24.txt", "nar_25.txt", "nar_27.txt", "nar_28.txt", "nar_29.txt", "nar_31.txt", "nar_32.txt", "nar_34.txt", "nar_35.txt", "nar_36.txt", "nar_37.txt", "nar_38.txt", "nar_39.txt", "nar_40.txt", "nar_41.txt", "nar_42.txt", "nar_44.txt", "nar_45.txt", "nar_46.txt")
 NUMBERED = re.compile(r"^([0-9]+):(.+)$")
 HANGUL = re.compile(r"[가-힣]")
 
@@ -68,6 +69,22 @@ def audit(root):
             if any(not HANGUL.search(item.group(2)) for item in parsed):
                 critical_errors.append(f"{relative}: untranslated subtitle line")
         english_only[folder] = untranslated
+        for name in REVIEWED:
+            relative = f"{folder}/{name}"
+            source = directory / name
+            if not source.is_file():
+                critical_errors.append(f"{relative}: missing reviewed source")
+                continue
+            try:
+                value = decode_source(source.read_bytes())
+                value.encode("cp949", errors="strict")
+            except UnicodeError:
+                critical_errors.append(f"{relative}: invalid CP949-compatible reviewed text")
+                continue
+            for line in value.splitlines():
+                match = NUMBERED.fullmatch(line)
+                if match and not HANGUL.search(match.group(2)):
+                    critical_errors.append(f"{relative}: untranslated subtitle line {match.group(1)}")
         for name in CRITICAL:
             if f"{folder}/{name}" not in critical_texts:
                 critical_errors.append(f"{folder}/{name}: missing critical source subtitle")

@@ -1,2 +1,2 @@
-1:You march into the desert sands, leaving the Vault behind you.
+1:당신은 볼트를 뒤로한 채 사막으로 걸어 나갔다.
 1

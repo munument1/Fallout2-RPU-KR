@@ -1,2 +1,2 @@
-1:Your mission beneath the Mutant Stronghold is successful.
-2:Your actions today will influence the outside world for years to come.
+1:뮤턴트 요새 아래에서 수행한 당신의 임무는 성공했다.
+2:오늘 당신이 한 일은 앞으로 오랫동안 바깥세상에 영향을 미칠 것이다.

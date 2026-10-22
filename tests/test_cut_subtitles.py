@@ -40,6 +40,13 @@ class CutSubtitleTests(unittest.TestCase):
                         expected = expected.replace("\n", "\r\n").encode("cp949")
                         self.assertEqual(archive.read(f"data/text/korean/{folder}/{name}"), expected)
 
+    def test_reviewed_english_subtitles_are_all_translated(self):
+        report = audit_cut_subtitles.audit(ROOT)
+        self.assertEqual(report["critical_errors"], [])
+        for folder in audit_cut_subtitles.FOLDERS:
+            for name in audit_cut_subtitles.REVIEWED:
+                self.assertNotIn(name, report["english_only"][folder])
+
     def test_audit_detects_english_regression(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
