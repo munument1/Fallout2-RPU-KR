@@ -1,2 +1,2 @@
-1:Your bones are scraped clean by the desolate wind.
-2:Your Vault will now surely die, as you have.
+1:황량한 바람이 당신의 뼈에 붙은 살점마저 깨끗이 쓸어 낸다.
+2:당신이 그랬듯, 이제 볼트도 틀림없이 죽음을 맞이할 것이다.
