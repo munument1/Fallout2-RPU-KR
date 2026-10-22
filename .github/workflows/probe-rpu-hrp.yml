@@ -1,0 +1,32 @@
+name: Read-only RPU HRP clipping compatibility probe
+
+on:
+  push:
+    branches:
+      - "fix/issue-4-cut-subtitle-regression"
+  pull_request:
+    paths:
+      - "tools/probe_rpu_hrp.py"
+      - ".github/workflows/probe-rpu-hrp.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-hrp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout translation source
+        uses: actions/checkout@v4
+      - name: Checkout official RPU v2.4.34 data
+        uses: actions/checkout@v4
+        with:
+          repository: BGforgeNet/Fallout2_Restoration_Project
+          ref: v2.4.34
+          path: upstream-rpu
+          sparse-checkout: |
+            release/f2_res.dll
+          sparse-checkout-cone-mode: false
+      - name: Read-only official HRP signature comparison
+        run: python tools/probe_rpu_hrp.py upstream-rpu/release/f2_res.dll
