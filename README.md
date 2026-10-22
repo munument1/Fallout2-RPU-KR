@@ -1,53 +1,39 @@
-# RPU 한국어 번역 — 공통 출력 엔진 방식
+# RPU 한국어 번역 — v2.4.34-native.1
 
-## 기존 설치 폴더에 바로 설치 (v1.2.1)
+**공식 RPU 2.4.34용 한국어 번역 및 글자 잘림 수정 통합 패키지**
 
-게임을 종료한 뒤 **Steam을 포함한 기존 게임·모드 설치 폴더**를 선택하세요. 시험용 전체 복사본 준비는 선택 사항입니다. 번역 ZIP을 먼저 적용하고 [한국어 출력 엔진 최신 정식 설치기](https://github.com/munument1/Fallout2-Korean-Text-Engine/releases/latest)를 실행하세요. 변경되는 원본 파일만 `korean_engine_backup_v2`에 자동 백업하며 같은 폴더에서 복구할 수 있습니다.
+[**정식 릴리즈 및 다운로드**](https://github.com/munument1/Fallout2-RPU-KR/releases/tag/v2.4.34-native.1)
 
-기준: **RPU 2.4.34**. 이번 변경은 기존 번역의 출력 방식 전환이며 원본 모드 버전 업그레이드가 아니다.
+## 이번 업데이트 (2026-10-22)
 
-한국어 번역 데이터는 이 저장소에서, 출력 모듈·글꼴·설치 도구는 [Fallout2 Korean Text Engine](https://github.com/munument1/Fallout2-Korean-Text-Engine)에서 관리한다. 한국어로 수정한 sfall `ddraw.dll`을 덮어쓰는 방식에서 공식 sfall과 별도 한국어 모듈을 사용하는 방식으로 전환한다.
+- 엔딩 동영상의 영어로 남은 자막 34종 번역 (`cuts` / `cuts_female`).
+- 하단 메시지 기록창에서 긴 한글 오른쪽이 잘리는 오류 수정.
+- 공식 RPU 2.4.34의 `f2_res.dll`이 기존 레저렉션 KR1.2에서 수정한 DLL 원본과 **SHA-256까지 동일**함을 확인한 뒤, 해당 CP949 픽셀 폭 기준 줄바꿈 코드를 동일하게 적용.
+- 원본 DLL 해시, 수정 코드 진입점, ZIP 무결성, 자막 파일을 GitHub Actions에서 검증함.
 
-## 새로운 독립형 출력 엔진 (v1.2.1)
+## 다운로드 파일
 
-기존 번역문의 MSG ID와 본문은 그대로 유지합니다. 이제 게임별 프로필, 중국어 수정 EXE, 중국어 글꼴 DLL을 요구하지 않습니다. [최신 정식 설치기](https://github.com/munument1/Fallout2-Korean-Text-Engine/releases/latest)는 선택한 게임 폴더 안의 호환 Fallout 2 실행 파일을 내부 구조로 자동 인식합니다. 핵심 ABI 자체가 변경된 파일은 무리하게 패치하지 않습니다.
+- **[RPU-KR-v2.4.34-with-HRP-fix.zip](https://github.com/munument1/Fallout2-RPU-KR/releases/download/v2.4.34-native.1/RPU-KR-v2.4.34-with-HRP-fix.zip)** — 공식 RPU 2.4.34용 번역+글자 잘림 통합 패키지(권장)
+- [korean-classic-data.zip](https://github.com/munument1/Fallout2-RPU-KR/releases/download/v2.4.34-native.1/korean-classic-data.zip) — 번역만 적용하는 패키지. HRP DLL 변경 없음
+- [한국어 텍스트 엔진 v1.2.3](https://github.com/munument1/Fallout2-Korean-Text-Engine/releases/tag/v1.2.3) — 한글 출력 설치기
 
-**설치 순서:** 번역 ZIP을 먼저 적용한 뒤 설치기를 실행하세요. 설치기가 한국어 언어 설정까지 자동으로 적용합니다.
+## 설치 방법
 
-전체 게임을 중복으로 백업하지 않습니다. EXE가 수정되므로 원상복구에 필요한 원본 파일 한 벌만 설치기가 보관합니다. 엔진은 최신 정식판이며, 게임별 긴 대화·전투·저장/불러오기를 전수 검증했다는 뜻은 아닙니다.
+1. **공식 RPU 2.4.34가 설치된 Fallout 2 게임 폴더**를 백업하세요. 특히 `f2_res.dll` 원본을 보관하세요.
+2. RPU 2.4.34에 다른 모드가 교체한 `f2_res.dll`이 없다면 권장 통합 ZIP을 `fallout2.exe`가 있는 폴더에 압축 해제하고 덮어씁니다.
+3. 독립형 Korean Text Engine **v1.2.3** 설치기로 같은 폴더에 한글 출력을 적용합니다. 기존 엔진 설치본의 업그레이드는 해당 엔진 안내에 따라 복구 후 재설치합니다.
+4. 기존 Fallout 2 / RPU 실행기로 게임을 시작합니다.
 
-**독립형 엔진용 번역 ZIP:** [v2.4.34-native-beta.2](https://github.com/munument1/Fallout2-RPU-KR/releases/tag/v2.4.34-native-beta.2). 기존 번역 내용은 유지하고 설치 안내·메타데이터만 독립형 엔진에 맞춰 갱신했습니다. 이전 CJK 기반 릴리스 파일은 그대로 남겨 두었습니다.
+**중요:** 통합 ZIP의 수정된 `f2_res.dll`은 **공식 RPU 2.4.34** 전용입니다. 최신 HRP, 다른 모드팩, 자체 수정 DLL에는 호환성을 보장하지 않습니다. 그 경우에는 번역 전용 ZIP을 사용하세요.
 
-## 현재 상태
+게임 EXE와 기존 sfall `ddraw.dll`은 배포 ZIP에서 교체하지 않습니다.
 
-공식 sfall 4.5.1과 별도 한국어 출력 모듈로 기존 설치본의 선택 화면을 확인했다. 전체 UI·장시간 플레이 또는 미래 sfall 버전의 검증을 뜻하지 않는다.
+## 검증 현황
 
-RPU의 기존 한국어 캐릭터 배경 이야기 세 파일도 보완했다. [보완 내역](docs/BIO_SUPPLEMENT_KO.md).
+GitHub Actions에서 공식 HRP 원본 SHA-256 및 수정된 함수 2곳을 검사했고, 자막 254개 파일과 번역 ZIP 테스트를 통과했습니다.
 
-기존 릴리스와 태그는 보존한다. 새 방식은 이 PR의 구성과 GitHub Actions에서 생성한 `korean-classic-data` 산출물을 기준으로 확인한다. 독립형 엔진 베타용 번역 데이터는 별도 릴리스로 배포하며 기존 버전의 번역 및 기존 릴리스는 보존한다.
+레저렉션 KR1.2에서는 같은 원본 DLL을 사용한 수정의 인게임 검증이 있었지만, **RPU 자체의 모든 플레이 환경에서 글자 잘림이 없어졌다고 전수 검증한 것은 아닙니다.** 재현되면 [이슈 #4](https://github.com/munument1/Fallout2-RPU-KR/issues/4)에 알려주세요.
 
-## 설치
+[릴리즈 노트](docs/RELEASE_NOTES_V2_4_34_NATIVE_1.md) · [세부 검증 기록](docs/ISSUE_4_SUBTITLE_AND_CLIPPING_QA.md) · [이전 설치 안내](docs/LEGACY_INSTALLATION_KO.md)
 
-1. 번역 버전과 일치하는 원본 모드를 준비합니다. 대상 위치는 **RPU 게임 폴더**입니다.
-2. 번역 ZIP을 **먼저** 적용합니다. GitHub Actions의 korean-classic-data 산출물을 받거나 아래 빌드 명령으로 생성한 ZIP을 게임 폴더에 풀어 data/text/korean 등을 추가합니다. 번역 ZIP에는 게임 EXE, sfall DLL, DAT, INT가 들어가지 않습니다.
-3. [최신 독립형 설치기](https://github.com/munument1/Fallout2-Korean-Text-Engine/releases/latest)의 Fallout2-Korean-Native-Setup.exe를 실행하고 게임 폴더만 지정합니다. 게임 종류나 --profile 선택, 중국어 CJK EXE 및 DLL은 필요 없습니다.
-4. 설치가 끝나면 기존 게임 실행기로 실행합니다.
-5. 한글 표시와 대화, 메뉴, 저장/불러오기를 확인하세요. 되돌릴 때는 같은 설치기의 복구 기능을 사용합니다.
-
-**모드별 주의:** RPU의 기존 sfall/HRP 구성을 그대로 유지합니다. 두 게임 실행 파일은 자동 탐색하며 이 번역 데이터의 기준은 RPU 2.4.34입니다. 다른 버전에는 해당 버전의 번역 확인이 필요합니다.
-
-[자세한 안내](docs/NEW_ENGINE_KO.md) · [구형 설치 방식 기록](docs/LEGACY_INSTALLATION_KO.md)
-
-## 번역 파일과 패키지
-
-기존 MSG의 `{ID}{음성}{본문}` 구조와 번역을 유지한다. CP949 파일을 일괄 재변환하지 않는다. UTF-8 한국어 텍스트가 있으면 클래식 ZIP 생성 시에만 CP949로 엄격 변환한다. 표현할 수 없는 문자는 `?`로 바꾸지 않고 빌드를 중단한다. 원본 파일은 변경하지 않는다.
-
-```shell
-python tools/build_translation.py --output dist/korean-classic-data.zip
-```
-
-패키지에 포함한 파일 해시와 변환 목록은 `translation-manifest.json`에 들어간다. RPU의 mods 내 한국어 폴더는 배포 ZIP에서 data 아래에 합쳐 로드 순서 설정의 누락을 피한다. 게임 데이터의 언어를 중국어나 일본어로 바꾸지 않는다.
-
-## 이전 배포 방식과 크레디트
-
-[이전 안내와 크레디트](docs/LEGACY_INSTALLATION_KO.md)는 이력 확인용이다. 원본 게임·원본 모드 파일은 포함하지 않는다. 기존 번역자와 원본 모드·sfall·글꼴 제작자의 기여를 유지한다.
+이 저장소는 원본 게임·RPU의 변경되지 않은 바이너리나 sfall DLL을 배포하지 않습니다. 한글 출력 엔진은 별도의 [Fallout2-Korean-Text-Engine](https://github.com/munument1/Fallout2-Korean-Text-Engine)에서 관리합니다.
