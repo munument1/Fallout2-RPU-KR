@@ -1,2 +1,2 @@
-1:The mutant attack on Necropolis spares none of the ghoulish inhabitants.
-2:After the mutant armies advance, they leave a truly dead city behind them.
+1:네크로폴리스를 덮친 뮤턴트의 공격에서 살아남은 구울은 아무도 없었다.
+2:뮤턴트 군대가 지나간 자리에는 말 그대로 죽은 도시만 남았다.

@@ -1,2 +1,2 @@
-1:The Brotherhood of Steel repels the first wave of a mutant invasion, but a traitor in their midst causes the Citadel to fall.
-2:Fortunately, the advanced technology is mastered slowly by the mutants, and they were unable to use it against you.
+1:강철 형제단은 뮤턴트 침공의 첫 번째 공세를 물리쳤지만, 내부의 배신자 때문에 성채를 함락당했다.
+2:다행히 뮤턴트들이 첨단 기술을 익히는 데는 오랜 시간이 걸렸고, 그들은 그 기술을 당신에게 사용할 수 없었다.

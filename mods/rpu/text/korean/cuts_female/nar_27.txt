@@ -1,2 +1,2 @@
-1:The mutants are slowed, but not stopped, by the brave defenders of Junktown.
-2:When the army finishes their brutal siege, nothing of Junktown remains.
+1:정크타운의 용감한 수비대는 뮤턴트의 진격을 늦추었지만 막아 내지는 못했다.
+2:군대의 잔혹한 포위 공격이 끝났을 때, 정크타운에는 아무것도 남지 않았다.

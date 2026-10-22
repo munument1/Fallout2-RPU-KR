@@ -1,2 +1,2 @@
-1:The ghouls of Necropolis learn how to maintain the repaired water pump,  and eventually rediscover many lost secrets of engineering.
-2:They form a business selling this technology to other towns.
+1:네크로폴리스의 구울들은 수리된 양수 펌프를 관리하는 법을 배우고, 마침내 잊혔던 여러 공학 기술까지 되찾았다.
+2:그들은 다른 마을에 이 기술을 판매하는 사업을 시작했다.

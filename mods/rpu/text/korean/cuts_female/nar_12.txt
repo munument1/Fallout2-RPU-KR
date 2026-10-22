@@ -1,2 +1,2 @@
-1:The ghouls of Necropolis learn firsthand the final meaning of dehydration, as their city succumbs to the desert sands and the water runs out.
-2:Without their water purifying control chip, they do not survive.
+1:네크로폴리스의 구울들은 도시의 물이 마르고 사막의 모래에 잠식되면서, 탈수로 죽는다는 것이 무엇인지 몸소 깨닫게 되었다.
+2:정수 장치의 제어 칩을 잃은 그들은 끝내 살아남지 못했다.

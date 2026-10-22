@@ -1,2 +1,2 @@
-1:You managed to destroy the Vats, then you killed the Master before he could realize his twisted plans.
-2:With the Master gone, his armies flee to the east in fear of retribution from the remaining normals.
+1:당신은 배양조를 파괴하고, 마스터가 뒤틀린 계획을 실현하기 전에 그를 처치했다.
+2:마스터를 잃은 그의 군대는 살아남은 평범한 인간들의 보복을 두려워하며 동쪽으로 달아났다.
