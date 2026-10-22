@@ -51,7 +51,7 @@ jobs:
           original=Path("upstream-rpu/release/f2_res.dll").read_bytes()
           assert hashlib.sha256(original).hexdigest()=="2d3c52cf624b22958db7fa44e3db71c2d0478503da5ceb40f0636dea1202fb5a"
           assert hashlib.sha256(original).hexdigest()!=hashlib.sha256(data).hexdigest()
-          assert [s.Name.rstrip(b"\\0") for s in p.sections].count(b".krfit")==1
+          assert [s.Name.rstrip(bytes([0])) for s in p.sections].count(b".krfit")==1
           for rva in (0xF250,0xF2E0):
               assert data[p.get_offset_from_rva(rva)]==0xE9
           print("Patched DLL verified")
