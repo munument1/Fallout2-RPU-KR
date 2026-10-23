@@ -5,8 +5,8 @@ import json
 from pathlib import Path
 import zipfile
 
-ALLOWED = {'.msg', '.txt', '.bio', '.ini', '.lst'}
-TEXT = {'.msg', '.txt', '.bio', '.ini', '.lst'}
+ALLOWED = {'.msg', '.txt', '.bio', '.ini', '.lst', '.sve'}
+TEXT = {'.msg', '.txt', '.bio', '.ini', '.lst', '.sve'}
 DENIED_NAMES = {'ddraw.ini', 'langfont.ini', 'fallout2font.ini'}
 
 
