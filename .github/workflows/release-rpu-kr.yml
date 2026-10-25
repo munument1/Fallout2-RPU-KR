@@ -66,7 +66,7 @@ jobs:
       - name: Upload release candidates
         uses: actions/upload-artifact@v4
         with:
-          name: rpu-korean-v2-4-34-fixed
+          name: rpu-korean-v2-4-34-native-3
           path: |
             dist/RPU-KR-v2.4.34-with-HRP-fix.zip
             dist/korean-classic-data.zip
@@ -77,9 +77,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          TAG=v2.4.34-native.2
+          TAG=v2.4.34-native.3
           if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             echo "Release tag already exists. Preserving it."
             exit 0
           fi
-          gh release create "$TAG"             dist/RPU-KR-v2.4.34-with-HRP-fix.zip             dist/korean-classic-data.zip             dist/SHA256SUMS.txt             --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA"             --title "RPU Korean v2.4.34-native.2"             --notes-file docs/RELEASE_NOTES_V2_4_34_NATIVE_2.md --latest
+          gh release create "$TAG"             dist/RPU-KR-v2.4.34-with-HRP-fix.zip             dist/korean-classic-data.zip             dist/SHA256SUMS.txt             --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA"             --title "RPU Korean v2.4.34-native.3"             --notes-file docs/RELEASE_NOTES_V2_4_34_NATIVE_3.md --latest
